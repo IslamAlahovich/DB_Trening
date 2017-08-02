@@ -1,6 +1,6 @@
-var express = require("/home/sex_machine/Projects/app/Express/node_modules/express"),
+var express = require("express"),
 http = require("http"),
-bodyParser = require("/home/sex_machine/Projects/app/node_modules/body-parser"),
+bodyParser = require("body-parser"),
 mongoose = require("mongoose"),
 app = express();
 
