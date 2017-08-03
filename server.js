@@ -1,13 +1,15 @@
 var express = require("express"),
-http = require("http"),
-bodyParser = require("body-parser"),
-mongoose = require("mongoose"),
-app = express();
+    http = require("http"),
+    bodyParser = require("body-parser"),
+    mongoose = require("mongoose"),
+    app = express(),
+    port = process.env.PORT || 3000,
+    uri = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/db_test'; 
 
 app.use(express.static(__dirname+"/client"));
 app.use(bodyParser.urlencoded({"extended": true}));
 
-mongoose.connect('mongodb://localhost/db_test');
+mongoose.connect(uri);
 
 var zSchema = mongoose.Schema({
    name: String,
@@ -16,7 +18,7 @@ var zSchema = mongoose.Schema({
 
 var zalupa = mongoose.model("zalupa", zSchema);
 
-http.createServer(app).listen(3000);
+http.createServer(app).listen(port);
 
 app.get("/index.html/json", function(req, res){
       zalupa.find({}, function(err, result){
