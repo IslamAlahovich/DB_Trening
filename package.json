@@ -2,19 +2,20 @@
   "name": "db_trening",
   "version": "1.0.0",
   "description": "Test WebApp project",
-  "engines":{
-    "node":"6.11.1"
+  "engines": {
+    "node": "6.11.1"
   },
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "dependencies":{
-    "express": "4.15.2",
+  "dependencies": {
     "body-parser": "1.17.2",
-    "mongoose": "4.11.5",
-    "mongodb": "2.2.30"
+    "dotenv": "^4.0.0",
+    "express": "4.15.2",
+    "mongodb": "2.2.30",
+    "mongoose": "4.11.5"
   },
   "repository": {
     "type": "git",
