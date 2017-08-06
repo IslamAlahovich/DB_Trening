@@ -1,10 +1,11 @@
+require('dotenv').config();
 var express = require("express"),
     http = require("http"),
     bodyParser = require("body-parser"),
     mongoose = require("mongoose"),
     app = express(),
     port = process.env.PORT || 3000,
-    uri = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/db_test'; 
+    uri = process.env.MONGOLAB_URI;
 
 app.use(express.static(__dirname+"/client"));
 app.use(bodyParser.urlencoded({"extended": true}));
